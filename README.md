@@ -11,7 +11,6 @@ To set up this server project locally, follow these steps:
 1. Inside the server file, clone the repository:
 
    ```
-   bash
    git clone https://github.com/yourusername/reverie-server.git
    ```
 2. Install the following dependencies:
