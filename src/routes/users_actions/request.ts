@@ -35,7 +35,10 @@ router.post(
       let user = await User.findById(req.user._id);
       if (!user) return res.status(400).json({ msg: "User not found" });
 
-      console.log({ 1: user._id, 2: request.userRequested });
+      console.log({
+        1: user._id.toString(),
+        2: request.userRequested.toString(),
+      });
       if (user._id.toString() != request.userRequested.toString())
         return res.status(400).json({ msg: "You can't modify this request." });
 

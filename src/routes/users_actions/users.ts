@@ -328,7 +328,11 @@ router.put(
       }
       if (req.body.username !== undefined) {
         let usernameExist = await User.findOne({ username: req.body.username });
-        if (usernameExist?._id.toString() != user._id.toString())
+
+        if (
+          usernameExist &&
+          usernameExist._id.toString() !== user._id.toString()
+        )
           return res.status(400).json({ msg: "Username already exist" });
 
         user.username = req.body.username;
@@ -366,7 +370,7 @@ router.put(
 
       await user.save();
 
-      if (req.body.isPremium === false) {
+      if (!user.isPremium) {
         await Post.updateMany(
           { user: user._id },
           { $set: { isLike: true, isComment: true } }
