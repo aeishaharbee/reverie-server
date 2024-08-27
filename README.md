@@ -15,9 +15,7 @@ To set up this server project locally, follow these steps:
    ```
 2. Install the following dependencies:
    ```
-   npm install socket.io path multer mongoose jwks-rsa jsonwebtoken install fs express dotenv cors body-parser bcryptjs typescript ts-node-dev
-
-   npm install --save @types/express @types/mongoose @types/bcryptjs @types/cors @types/jsonwebtoken @types/multer
+   npm install
    ```
 3. Create a .env file and add the following environment variables:
    ```
